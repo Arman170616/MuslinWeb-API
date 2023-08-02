@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import AboutUs, ContactInformation
+from .models import AboutUs, ContactInformation, Product
 
 
 class AboutUsSerializer(serializers.ModelSerializer):
@@ -22,3 +22,10 @@ class ContactInformationSerializer(serializers.ModelSerializer):
 
         def create(self, validated_data):
             return ContactInformation.objects.create(**validated_data)
+        
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id','name', 'description', 'price', 'image')
