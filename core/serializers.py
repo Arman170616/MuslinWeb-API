@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import AboutUs, ContactInformation, Product
+from .models import AboutUs, ContactInformation, Product, Testimonial, Service
 
 
 class AboutUsSerializer(serializers.ModelSerializer):
@@ -29,3 +29,11 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('id','name', 'description', 'price', 'image')
+
+
+class TestimonialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Testimonial
+        fields = '__all__'
+
+        
